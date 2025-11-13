@@ -1,9 +1,3 @@
-/*
- * Copyright (C) 2025 - present
- * Hochschule Karlsruhe
- *
- * Licensed under the GNU General Public License, Version 3 (GPLv3).
- */
 package com.acme.racingteam.controller;
 
 import com.acme.racingteam.entity.Team;
@@ -19,15 +13,13 @@ import java.util.Collection;
 @RequestMapping(TeamController.API_PATH)
 class TeamController {
     static final String API_PATH = "/teams";
-    static final String ID_PATTERN = "[\\da-f]{8}-[\\da-f]{4}-[\\da-f]{4}-[\\da-f]{4}-[\\da-f]{12}";
     private final TeamService service;
 
-    public TeamController(final TeamService service) {
+    TeamController(final TeamService service) {
         this.service = service;
     }
 
-
-    @GetMapping(path = "{id:" + ID_PATTERN + "}")
+    @GetMapping(path = "{id}")
     Team getById(@PathVariable final UUID id) {
         return service.findById(id);
     }

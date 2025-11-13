@@ -33,7 +33,7 @@
 
     2) Microservice als selbstausfuehrendes JAR oder Docker-Image erstellen und ausfuehren
         .\mvnw package spring-boot:repackage -D'maven.test.skip=true' -D'spring-boot.build-image.skip=true'
-            -> ${project.build.directory}/kunde-...jar-> target/kunde-...jar
+            -> ${project.build.directory}/racingteam-...jar-> target/racingteam-...jar
             https://docs.spring.io/spring-boot/maven-plugin/packaging.html#packaging.repackage-goal
 
             java -\-enable-preview -jar .\target\kunde-...jar `
@@ -118,13 +118,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.acme</groupId>
-    <artifactId>kunde</artifactId>
+    <artifactId>racingteam</artifactId>
     <version>2025.10.1</version>
     <!-- <version>2025.10.2</version> -->
     <!-- <version>2025.10.3</version> -->
     <packaging>jar</packaging>
 
-    <name>kunde</name>
+    <name>racingteam</name>
     <description>Beispielprojekt fuer Softwarearchitektur</description>
     <url>${project.organization.url}</url>
     <inceptionYear>2016</inceptionYear>

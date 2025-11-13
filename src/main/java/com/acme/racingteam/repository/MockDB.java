@@ -38,7 +38,20 @@ final class MockDB {
                                 DriverBuilder.getBuilder().setName("Sonny Hayes").setAge(61).build(),
                                 DriverBuilder.getBuilder().setName("Joshua Pearce").setAge(24).build()
                         ))
-                        .build()
+                        .build(),
+                TeamBuilder.getBuilder()
+                    .setId(UUID.fromString("00000000-0000-0000-0000-000000000003"))
+                    .setName("Ferrari")
+                    .setTeamPrincipal("Frédéric Vasseur")
+                    .setHomebase(HomebaseBuilder.getBuilder()
+                        .setLocation("Maranello")
+                        .setCountry("Italy")
+                        .build())
+                    .setDrivers(List.of(
+                        DriverBuilder.getBuilder().setName("Lewis Hamilton").setAge(40).build(),
+                        DriverBuilder.getBuilder().setName("Charles Leclerc").setAge(28).build()
+                    ))
+                    .build()
         ).collect(Collectors.toList());
     }
 
