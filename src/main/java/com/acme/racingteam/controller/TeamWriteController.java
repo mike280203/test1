@@ -60,7 +60,7 @@ class TeamWriteController {
 
     @ExceptionHandler
     ErrorResponse onNameExists(final NameExistsException ex) {
-        return ErrorResponse.create(ex, UNPROCESSABLE_ENTITY, ex.getMessage());
+        return ErrorResponse.create(ex, UNPROCESSABLE_CONTENT, ex.getMessage());
     }
 
     @ExceptionHandler
@@ -77,6 +77,6 @@ class TeamWriteController {
             .map(err -> err.getField() + ": " + err.getDefaultMessage())
             .toList()
             .toString();
-        return ErrorResponse.create(ex, UNPROCESSABLE_ENTITY, detail);
+        return ErrorResponse.create(ex, UNPROCESSABLE_CONTENT, detail);
     }
 }
